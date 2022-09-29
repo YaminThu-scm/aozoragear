@@ -1,0 +1,118 @@
+<style type="text/css">
+    .section--{{ section.id }} .newsletter {
+        background-color: {{ section.settings.newsletter_bg }};
+    }
+</style>
+
+{% if section.settings.footer_newsletter_enable %}
+    {% if section.settings.footer_newsletter_home == false or template.name != 'index' %}
+        <section class="section section--{{ section.id }}">
+            <div class="inner">
+                <div class="ft-inner">
+                    <div class="human-img">
+                        <img src="{{ 'img_human_pc.png' | asset_img_url: '200x' }}" class="s-pc">
+                        <img src="{{ 'img_human_sp.png' | asset_img_url: '200x' }}" class="s-sp">
+                    </div>
+                    <a href="https://twitter.com/aozoragear" class="twitter-btn" target="_blank" rel="noreferrer noopener">
+                        <img src="{{ 'img_twitter_pc.png' | asset_img_url: '200x' }}" alt="twitter" class="s-pc">
+                        <img src="{{ 'img_twitter_sp.png' | asset_img_url: '200x' }}" alt="twitter" class="s-sp">
+                    </a>
+                    <div class="newsletter__form-wrapper">
+                        {% form 'customer', id: 'newsletter', class: 'newsletter__form-form' %}
+                            {{ form.errors | default_errors }}
+                            {% if form.posted_successfully? %}
+                                <div class="newsletter__form-message">
+                                    <h3 class="newsletter__form-message__text">{{ 'general.newsletter_form.confirmation' | t }}</h3>
+                                </div>
+                            {% else %}
+                                <div class="o-layout o-layout--flush">
+                                    <div class="o-layout__item">
+                                        <input type="hidden" name="contact[tags]" value="newsletter">
+                                        <label for="Email-Footer">メールマガジン登録</label>
+                                        <div class="input-gp">
+                                            <input type="email"
+                                                name="contact[email]"
+                                                id="Email-Footer"
+                                                class="newsletter__input"
+                                                value="{% if customer %}{{ customer.email }}{% endif %}"
+                                                placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
+                                                autocorrect="off"
+                                                autocapitalize="off">
+                                                <button type="submit" class="submit-btn" name="commit" id="Subscribe-Footer">{{ 'general.newsletter_form.submit' | t }}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endform %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endif %}
+{% schema %}
+{
+    "name": "Newsletter",
+    "class": "js-section__footer-newsletter",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "footer_newsletter_enable",
+            "label": "Show newsletter signup",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "footer_newsletter_home",
+            "label": "Hide on home page",
+            "default": false
+        },
+        {
+            "type": "color",
+            "id": "newsletter_bg",
+            "label": "Background color",
+            "default": "#f0f0f0"
+        },
+        {
+            "type": "select",
+            "id": "newsletter_style",
+            "label": "Text color",
+            "default": "default",
+            "options": [
+                {
+                    "value": "default",
+                    "label": "Default"
+                },
+                {
+                    "value": "default-light",
+                    "label": "Default light"
+                },
+                {
+                    "value": "dark",
+                    "label": "Dark"
+                },
+                {
+                    "value": "light",
+                    "label": "Light"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "footer_newsletter_title",
+            "label": "Heading",
+            "default": "Newsletter"
+        },
+        {
+            "type": "richtext",
+            "id": "footer_newsletter_desc",
+            "label": "Subheading",
+            "default": "<p>Let your customers know what to expect if they sign up to your mailing list.</p>"
+        },
+        {
+            "type": "paragraph",
+            "content": "Every sign up will create a 'Customer account' in this store. [Manage customers](/admin/customers?query=&accepts_marketing=1)"
+        }
+    ]
+}
+{% endschema %}

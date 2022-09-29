@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_notice": false,
+            "show_separator": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "product_variant_style": "buttons",
+            "use_swatch_images": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "inventory_notice": {
+          "type": "inventory_notice",
+          "settings": {
+            "inventory_limit": 3,
+            "align": "right"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "enable_payment_button": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "inventory_notice",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "layout": "classic",
+        "container": "large",
+        "show_breadcrumbs": false,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "image_size": "large",
+        "bg_color": "rgba(0,0,0,0)",
+        "text_color": "default",
+        "bg_height": "default"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "related_title": "あなたへのオススメ",
+        "related_mobile_layout": "carousel",
+        "related_grid_num": 3,
+        "grid_mobile": "1",
+        "related_grid_row": 1
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "recently-viewed-products"
+  ]
+}

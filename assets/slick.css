@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+.slick-slider {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: '';
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.slick-slide a:hover {
+  opacity: 0.8;
+}
+
+.slick-slide a:hover .work-content {
+  text-decoration: underline;
+}
+
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: inline-block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-prev,
+.slick-next {
+  display: block;
+  position: absolute;
+  top: 45%;
+  z-index: 9;
+  line-height: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.slick-prev {
+  left: 2.4%;
+}
+
+.slick-next {
+  right: 4.5%;
+}
+
+.slick-prev::after,
+.slick-next::after {
+  display: block;
+  position: absolute;
+  width: 33px;
+  height: 61px;
+  margin: 0 auto;
+  content: "";
+}
+
+.slick-dots {
+  display: block;
+  width: 100%;
+  list-style: none;
+  margin-top: 35px;
+  padding: 5px 0px;
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+  position: relative;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.slick-dots li:last-child {
+  margin-right: 0;
+}
+
+.slick-dots li button {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #e5e5e2;
+  background-color: #e5e5e2;
+  text-align: center;
+  content: "";
+  border-radius: 7px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ms_comtslider .slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #ccc;
+  font-size: 39px;
+  text-align: center;
+  content: "•";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ms_comtslider .slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li.slick-active button:before {
+  border: 1px solid #17a83b;
+  background-color: #17a83b;
+}
+
+/* media query -> sp 
+=================================================================*/
+@media screen and (max-width:767px) {
+
+  .slick-prev,
+  .slick-next {
+    top: 46vw;
+  }
+
+  .slick-prev {
+    left: 3.4%;
+  }
+
+  .slick-next {
+    right: 7.5%;
+  }
+
+  .slick-prev::after,
+  .slick-next::after {
+    width: 4.267vw;
+    height: 8vw;
+  }
+
+  .slick-dots li button {
+    width: 2.133vw;
+    height: 2.133vw;
+  }
+
+  .slick-dots li button:before {
+    width: 2.133vw;
+    height: 2.133vw;
+    border-radius: 15px;
+  }
+
+  .slick-dots {
+    margin-top: 4.667vw;
+  }
+
+  .slick-dots li {
+    margin-right: 5.333vw;
+  }
+}

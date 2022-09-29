@@ -1,0 +1,138 @@
+<div class="main " id="main">
+  <div id="shopify-section-template--15749786370273__main" class="shopify-section"><section class="section section--page page">
+    <div class="container container--camper">
+      <div class="section__title section__title--center">
+        <h1 class="section__title-text h2">{{ page.title }}</h1>
+      </div>
+      <div class="yurucamping-sec">
+        <div class="yurucamping-blk reverse">
+          <div class="yurucamping-img">
+            <img src="{{ 'yurucamping_img01.png' | asset_img_url: 'original' }}" srcset="{{ 'yurucamping_img01.png' | asset_img_url: 'original' }}" alt="yurucamping img"/>
+          </div>
+          <div class="yurucamping-txt txt-bg01">
+            「ゆるキャン△」のイラストがデザインされたキャンピングカーが誕生！
+            その名も「ゆるキャン△ピングカー」。<br>
+            描き下ろしのなでしことリンを車両の側面に、ルーフには富士山をデザインした世界で1つだけのキャンピングカーです！<br>
+            全国に駆けつけ、キャンプ場などの施設を盛り上げます！！<br>
+            キャンピングカーへの宿泊プランがある場合も！！<br>
+            出没スケジュールをチェックして、ぜひお立ち寄りください！
+          </div>
+        </div>
+        <div class="yurucamping-blk">
+          <div class="yurucamping-img">
+            <img src="{{ 'yurucamping_img02.png' | asset_img_url: 'original' }}" srcset="{{ 'yurucamping_img02.png' | asset_img_url: 'original' }}" alt="NEW ITEM"/>
+          </div>
+          <div class="yurucamping-txt txt-bg02">
+            「ゆるキャン△ピングカー」を見かけたら、SNSで『#ゆるキャンピングカー』とつけてどんどん投稿してください。<br>
+             Twitterの場合、「アオゾラギア公式」アカウントより、リツイートをさせていただくことがございます。
+          </div>
+        </div>
+        <div class="yurucamping-blk reverse">
+          <div class="yurucamping-img">
+            <img src="{{ 'yurucamping_img03.png' | asset_img_url: 'original' }}" srcset="{{ 'yurucamping_img03.png' | asset_img_url: 'original' }}" alt="NEW ITEM"/>
+          </div>
+          <div class="yurucamping-txt txt-bg03">
+            「ゆるキャン△ピングカー」をイベントに呼びたい、キャンプ場で宿泊プランを作りたい！などご希望の方がいらっしゃいましたら、是非お問合せページよりご連絡ください。<br>
+            皆さまからのご連絡、お待ちしております！
+          </div>
+        </div>
+      </div>
+      <div class="patrol-schecule">
+        <div class="section__title section__title--center">
+          <h1 class="section__title-text h2">ゆるキャン△ピングカー出没スケジュール</h1>
+        </div>
+        <div class="p-sch-inner">
+          <div class="sch-text">
+            「ゆるキャン△ピングカー」の出没について以下、予めご了承ください。<br><br>
+            ・「ゆるキャン△ピングカー」出没スケジュールは右のカレンダーをご覧ください。<br>
+            ・当サイトから直接予約などの手続きをすることはできません。<br>
+            ・宿泊の有無や金額、イベントの有償無償など詳細については、各施設や催事運営会社へお問い合わせをお願いいたします。<br>
+            ・出没先で物販が実施されるとは限りません。<br>
+            ・ 「ゆるキャン△ピングカー」出没スケジュールは予告なく変更となる可能性があります。
+          </div>
+          <div id='calendar'></div>
+        </div>
+      </div>
+      <div class="yurucampin-blog">
+        <div class="section__title section__title--center">
+          <h1 class="section__title-text h2">ゆるキャン△ピングカー情報</h1>
+        </div>
+        <ul class="article-blk">
+        {% for link in linklists.blogs.links %}
+          {% assign blog = link.object %}
+          {% for article in blog.articles %}
+            {% if article.tags contains 'ゆるキャン△ピングカー' %} 
+            <li>
+              <div class="article-img">
+                <a href="{{ article.url }}">
+                  <div class="img">
+                    {%- if article.image != blank -%}
+                      <img src="{{ article.image.src | image_url: width: 480 }}">
+                    {% else %}  
+                      <img src="{{ 'placeholder.png' | asset_img_url: '480x' }}" alt="Placeholder">
+                    {%- endif -%}
+                  </div>
+                </a>
+              </div>
+              <div class="article-txt">
+                <div class="article-row">
+                  <div class="date">{{ article.published_at | date: "%Y.%m.%d" }}</div>
+                  {%- if article.tags != blank -%}
+                    <div class="tag-blk">
+                      {% for tag in article.tags %}
+                        <div class="tag"> 
+                          {{ tag }}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {%- endif -%}
+                </div>
+                <div class="ttl">
+                  <a href="{{ article.url }}">
+                    {{ article.title | truncate: 50 | escape }}
+                  </a>
+                </div>
+                <div class="content">{{ article.content | strip_html | truncatewords: 30 }} </div>
+              </div>
+            </li>  
+            {% endif %} 
+          {% endfor %} 
+        {% endfor %}
+        </ul>
+        <a href="/blogs/topics/tagged/ゆるキャン-ピングカー" class="tagged-btn">ゆるキャン△ピングカーの記事をもっと見る</a>
+      </div>
+      <div class="yurucampin-product all-item">
+        <div class="section__title section__title--center">
+          <h1 class="section__title-text h2">ゆるキャン△ピングカーグッズ</h1>
+        </div>
+        <div class="item-layout">
+          {%- paginate collections.yurucamp_car.products by 1000 -%}
+            {% for product in collections.yurucamp_car.products %}
+              <div class="o-layout__item product-item">
+                  {% render 'product-grid-item', product: product, collection: collection, page: 'home', image_sizes: sizes %}
+              </div>
+            {% endfor %}
+          {% endpaginate %}
+        </div>
+      </div>
+      <div class="yurucampin-contact">
+        <div class="contact-txt01">
+          <div class="yurucamping-contact-img">
+            <img src="{{ 'ttl_icon.png' | asset_img_url: 'original' }}" srcset="{{ 'ttl_icon.png' | asset_img_url: 'original' }}" alt="Title Icon"/>
+          </div>
+          ゆるキャン△ピングカーに遊びに来てほしい
+        </div>
+        <div class="contact-txt02">
+          キャンプ場オーナーの方や、イベント企画運営企業の方へ
+        </div>
+        <div class="contact-txt03">
+          「ゆるキャン△ピングカー」のキャンプ場やイベントへの派遣希望は以下よりお問合せください。
+        </div>
+        <a href="/pages/offer" class="yurucampin-btn">問い合わせる</a>
+      </div>
+      <div class="campain-info-txt">
+        ©あｆろ・芳文社／野外活動委員会
+      </div>
+    </section> 
+  </div>
+</div>

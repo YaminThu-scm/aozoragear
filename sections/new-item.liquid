@@ -1,0 +1,14 @@
+{% assign products = collections.all.products | sort: 'published_at' | reverse %}
+        {% for product in products limit: 4 %}
+         <div>
+            {{ product.published_at }}
+            {{ product.title }}
+            {{ product.price | money_with_currency}}
+          </div>
+{% endfor %}
+<a href="/pages/product-all">See More</a>
+{% schema %}
+{
+  "name": "NEW ITEM"
+}
+{% endschema %}

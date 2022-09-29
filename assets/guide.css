@@ -1,0 +1,437 @@
+/*ご利用ガイド*/
+
+.pc_on {
+  display: block;
+}
+
+.sp_on {
+  display: none;
+}
+
+.sub-menu {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  border-width: 0;
+  border-style: outset;
+  border-color: none;
+  border-image: initial;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#copyright {
+  padding-top: 20px;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+#page_top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background: #333;
+}
+
+#page_top a {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+
+#page_top a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 1em;
+  margin: auto;
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+  content: '\f106';
+}
+/*PC*/
+#infowrp {
+  display: flex;
+}
+
+#infohdr {
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 100vh;
+  padding: 30px 0;
+  background-color: #352300;
+}
+
+#infohdr h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+#infohdr h1 img {
+  width: 200px;
+}
+
+#info_main {
+  width: 100%;
+  padding-left: 400px;
+}
+
+#leftfix {
+  margin: 0 auto;
+}
+
+#leftfix ul {
+  width: 100%;
+  list-style: none;
+  margin: 0 auto;
+}
+
+#leftfix ul li {
+  width: 100%;
+}
+
+#leftfix ul li a {
+  display: block;
+  position: relative;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 1em;
+}
+
+#leftfix ul li a:before {
+  position: absolute;
+  left: -30px;
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1em;
+  font-weight: 900;
+  content: '\f054';
+}
+
+#info_main #copyright {
+  color: #333;
+  font-size: 0.5em;
+}
+
+#info_main footer {
+  padding: 0 0 10px 0;
+  background-color: #fff;
+  text-align: center;
+	margin-top: 0;
+}
+
+#info_main #info_inr {
+  margin: 0 auto;
+  padding: 60px 1em 0;
+  max-width: 960px;
+}
+
+#info_inr ul {
+  list-style-position: inside;
+}
+
+#info_inr ul li {
+  font-weight: bold;
+}
+
+#info_inr ul li p {
+  margin-top: 10px;
+  padding-left:1em;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+#info_inr ul li.info-list {
+  margin-top: 1rem;
+}
+
+#info_inr a {
+  text-decoration: underline;
+}
+
+#info_main h2 {
+  margin: 20px 0 40px;
+  font-size: 2em;
+  text-align: center;
+}
+
+#info_main h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#info_main h4 {
+  margin: 60px 0 40px;
+  padding: 0.5em 0;
+  font-size: 1.2em;
+  border-top: solid 1px #333;
+  border-bottom: solid 1px #333;
+}
+
+#info_main ul {
+  list-style: none;
+}
+
+#info_main ul li::before {
+  margin-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: '\f054';
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.main-content.padding-none {
+  padding: 0;
+}
+
+.page-container {
+  transform: none;
+}
+
+/*-----------------------------------
+header
+-----------------------------------*/
+#info_inr .list {
+  padding-left: 2.2em;
+}
+
+#info_inr .list li {
+  position: relative;
+  padding-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+#info_inr .list li::before {
+  position: absolute;
+  content: "";
+  left: -18px;
+  top: 0.8em;
+  height: 5px;
+  width: 5px;
+  border-radius: 100%;
+  background: #333;
+}
+/*menu*/
+.sp-menu * {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: left;
+  text-decoration: none;
+  list-style: none;
+}
+
+.sp-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sp-menu .menu-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(51, 51, 51, 0.5);
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+.sp-menu .menu-button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 30px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  position: fixed;
+  top: 6px;
+  left: 10px;
+  z-index: 1001;
+  text-align: center;
+  outline: none;
+}
+
+.sp-menu .menu-button.active .line {
+  width: 33px;
+  background-color: #fff;
+}
+
+.sp-menu .menu-button.active .line1 {
+  transform: rotate(45deg);
+}
+
+.sp-menu .menu-button.active .line2 {
+  opacity: 0;
+}
+
+.sp-menu .menu-button.active .line3 {
+  transform: rotate(-45deg);
+}
+
+.sp-menu .line {
+  display: block;
+  height: 2px;
+  margin: 10px 0;
+  transition: all 0.2s;
+  transform-origin: 0 0;
+}
+
+.sp-menu .sp-nav-wrapper {
+  width: 312px;
+  height: 100%;
+  transition: all 0.2s;
+  transform: translate(-312px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #352300;
+}
+
+.sp-menu .sp-nav-wrapper.open {
+  transform: translate(0);
+  overflow: scroll;
+}
+
+.sp-menu.left .menu-button {
+  right: 32px;
+  left: auto;
+}
+
+.sp-menu.left .sp-nav-wrapper {
+  transform: translate(-312px);
+  right: auto;
+  left: 0;
+}
+
+.sp-menu.left .sp-nav-wrapper.open {
+  transform: translate(0);
+}
+
+/*+++ Default Navigation CSS +++*/
+.sp-menu .sp-nav {
+  padding: 70px 24px;
+}
+
+.sp-nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sp-menu .sp-nav li {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 1em;
+}
+
+/*+++ Default Button Color +++*/
+.sp-menu .menu-button {
+  color: #333;
+}
+
+.sp-menu .menu-button .line {
+  background-color: #fff;
+}
+
+.s-pl-10 {
+  padding-left: 1em;
+}
+/*-----------------------------------
+footer
+-----------------------------------*/
+
+footer{
+  width: 100%;
+  margin-top: 100px;
+  padding: 100px 20px 50px;
+  background-color: #ddd;
+  color: #333;
+}
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  #infohdr {
+    width: 325px;
+  }
+
+  #info_main {
+    width: 100%;
+    padding-left: 325px;
+  }
+}
+
+/*sp*/
+@media screen and (max-width:767px){
+  .pc_on{
+  display: none;
+  }
+  .sp_on{
+  display: block;
+  }
+  .logo {
+  color: #000;
+  }
+  #infohdr{
+    position: fixed;
+    justify-content: center;
+    z-index: 9999;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    background-color: #352300;
+  }
+
+  #infohdr h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  #infohdr h1 img{
+    max-width: 200px;
+    vertical-align: baseline;
+  }
+  #info_main{
+    padding-left:0;
+  }
+}

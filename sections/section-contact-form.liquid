@@ -1,0 +1,82 @@
+<section class="section section-contact-form section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="contact-form">
+    <div class="contact-form contact-form--bg-{{ section.settings.background }}">            
+        <div class="container container--tiny container--mob-0">
+            
+            {% unless section.settings.heading == blank %}
+                <div class="section__title section__title--center">
+                    <h2 class="section__title-text h3">{{ section.settings.heading }}</h2>
+                </div>
+            {% endunless %}
+
+            {% form 'contact', class: "contact-form__form" %}
+                {% if form.posted_successfully? %}
+                    <script>
+                    window.location = "/pages/thanks";
+                    </script>
+                {% endif %}
+
+                {{ form.errors | default_errors }}
+
+                <div class="o-layout">
+                    <div class="o-layout__item u-1/1 u-1/2@tab">
+                        <label for="ContactFormName">{{ 'contact.form.name' | t }}<span class="label-required">*</span></label>
+                        <input type="text" id="ContactFormName" name="contact[name]" required value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                    </div>
+                    <div class="o-layout__item u-1/1 u-1/2@tab">
+                        <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}<span class="label-required">*</span></label>
+                        <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" required value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+                    </div>
+                </div>
+
+                <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}<span class="label-required">*</span></label>
+                <input type="tel" id="ContactFormPhone" name="contact[phone]" pattern="[0-9\-]*" required value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+                <div class="Select--primary">
+                    <svg class="Icon Icon--select-arrow" role="presentation" viewBox="0 0 19 12">
+                        <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+                    </svg>
+                    <select name="contact[category]" id="ContactFormCategory">
+                        <option value="" disabled selected>カテゴリーを選択してください</option>
+                        <option value="商品・特典について">商品・特典について</option>
+                        <option value="商品発送について">商品発送について</option>
+                        <option value="返品・交換・キャンセルについて">返品・交換・キャンセルについて</option>
+                        <option value="ゆるキャン△ピングカー派遣について">ゆるキャン△ピングカー派遣について</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <label for="ContactFormMessage">{{ 'contact.form.message' | t }}<span class="label-required">*</span></label>
+                <textarea rows="10" id="ContactFormMessage" name="contact[body]" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+                <input type="submit" class="c-btn c-btn--primary c-btn--center c-btn--full u-mt u-mb-" value="{{ 'contact.form.send' | t }}">
+            {% endform %}
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Contact form",
+    "class": "js-section__contact-form",
+    "settings": [
+        {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Send us an email"
+        },
+        {
+            "type": "checkbox",
+            "id": "background",
+            "label": "Show background color",
+            "default": true
+        }
+    ],
+    "presets": [
+        {
+            "name": "Contact form"
+        }
+    ]
+}
+{% endschema %}

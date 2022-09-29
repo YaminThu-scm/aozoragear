@@ -1,0 +1,26 @@
+{% for product in collections.pick-up.products %}
+    {{ product.title }}
+{% endfor %}
+{% schema %}
+{
+  "name": "PICK UP",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        }
+      ]
+    }
+  ]
+  
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}

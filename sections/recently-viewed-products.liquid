@@ -1,0 +1,73 @@
+{{ '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' | script_tag }}
+{{ 'jquery.products.min.js' | asset_url | script_tag }}
+
+  <div class="product-recent-template">
+    <div class="container container--medium">
+      <div class="section__title section__title--center">
+        <h2 class="section__title-text">{{ section.settings.related_title | escape }}</h2>
+      </div>
+    </div>
+    <div id="recently-viewed-products" class="o-layout-recent layout-slider">
+    </div>
+  </div>
+      {% raw %}
+        <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+          <div class="o-layout__item recently-view"  itemscope itemtype="http://schema.org/Product" >
+            <a href="${url}" class="product-card-link js-product-link">
+              <div class="product-card__media">
+                  <div class="o-ratio o-ratio--1:1">
+                      <div class="o-ratio__content">
+                        <img src="${Shopify.Products.resizeImage(featured_image, "large")}" />
+                      </div>
+                  </div>
+  
+              </div
+          </a>
+          <a href="${url}" class="product-card-link js-product-link">
+            <div class="product-card__details">
+                <h2 class="product-card__title h4">${title}</h2>
+                <div class="product-card__details__hover">  
+                        <p class="product-card__price h5">
+                           <span class="product-card__price-price"><span class="money">${Shopify.formatMoney(price)}</span></span>
+                        </p>     
+                </div>
+            </div>
+        </a>
+        <div class="product-card-btn product-card-btn--hover">
+          {{if available == false}}
+              <a href="${url}" class="c-btn c-btn--full c-btn--light c-btn--small-tab product-card-btn__btn">Sold out</a>
+          {{else variants.length <= 1}}
+              <form method="post" action="/cart/add" id="${id}" accept-charset="UTF-8" class="js-product-form" enctype="multipart/form-data">
+                  <input type="hidden" name="id" value="${variants[0].id}" />
+                  <button type="submit" name="add" class="c-btn c-btn--full c-btn--primary c-btn--small-tab product-card-btn__btn js-product-add">
+                      <span class="product-card-btn__text">
+                          <span class="js-product-add-text">カートに入れる</span>
+                      </span>
+                      <span class="product-card-btn__tick"><i class="icon icon--tick"></i></span>
+                  </button>
+                </form>
+            {{else variants.length > 1}}
+            <a href="${url}" class="c-btn c-btn--full c-btn--primary c-btn--arrow c-btn--small-tab product-card-btn__btn">選択オプション</a>
+          {{/if}}
+        </div>
+      </div>
+      </script>
+      {% endraw %}
+      <script>
+      Shopify.Products.showRecentlyViewed( { howManyToShow:4 } );
+      </script>
+	</div>
+  {% schema %}
+{
+    "name": "Product Recently Viewed",
+    "settings": [
+        {
+            "id": "related_title",
+            "type": "text",
+            "label": "Heading",
+            "default": "最近見たアイテム"
+        }
+    ]
+}
+{% endschema %}
+

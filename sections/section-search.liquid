@@ -1,0 +1,54 @@
+<section class="sec-search">
+  <h2 class="sec-search-ttl"><span>タイトルから探す</span></h2>
+  <div class="search-blk">
+    {%- for block in section.blocks -%}
+    <a href="{{ block.settings.link }}" class="search-item">
+      <div>
+        <img src="{{  block.settings.image  | img_url: 'original' }}" srcset="{{ block.settings.image | img_url: 'original' }}">
+      </div>
+      <span class="copy-txt">{{ block.settings.title }}</span>
+    </a>
+  {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "タイトルから探す",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Logo Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Copyright Text",
+          "default": "text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "タイトルから探すリンク"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "タイトルから探す",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

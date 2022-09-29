@@ -1,0 +1,34 @@
+<section class="sec-all-products inner">
+  <div class="all-item">
+    <h2 class="cmn-ttl">
+      <img src="{{ 'new_item_ttl.png' | asset_img_url: 'medium' }}" srcset="{{ 'new_item_ttl.png' | asset_img_url: 'original' }}" alt="NEW ITEM"/>
+    </h2>
+    {% assign products = collections.all.products %}
+    <div class="item-layout">
+        {% for product in products limit: 8 %}
+        <div class="o-layout__item product-item">
+            {% render 'product-grid-item', product: product, collection: collection, page: 'home', image_sizes: sizes %}
+        </div>
+      {% endfor %}
+    </div>
+  <a href="/collections/all" class="all-item-btn">ALL ITEM</a>
+  </div>
+  <div class="pickup">
+    <h2 class="cmn-ttl">
+	  <img src="{{ 'pickup_ttl.png' | asset_img_url: 'medium' }}" srcset="{{ 'pickup_ttl.png' | asset_img_url: 'original' }}" alt="PICK UP"/>
+    </h2>
+    <div class="item-layout">
+      {% for product in collections.pickup.products limit: 4 %}
+      <div class="o-layout__item product-item">
+          {% render 'product-grid-item', product: product, collection: collection, page: 'home', image_sizes: sizes %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ALL PRODUCTS"
+}
+{% endschema %}
+

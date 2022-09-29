@@ -1,0 +1,32 @@
+<section class="sec-blog-news">
+  <div class="news">
+    <div class="twitter-news">
+      <a class="twitter-timeline" data-height="480" data-theme="light" href="https://twitter.com/aozoragear?ref_src=twsrc%5Etfw">Tweets by aozoragear</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="news-txt">
+      <h5 class="news-ttl">お知らせ</h5>
+      <ul class="news-list">
+        {% for article in blogs.news.articles limit: 4 %}
+        <li>
+          <span class="date">{{ article.created_at | date: "%Y.%m.%d" }}</span>
+          <div class="content">
+            {{ article.title | link_to: article.url }}
+          </div>
+        </li>
+       {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Blog News",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

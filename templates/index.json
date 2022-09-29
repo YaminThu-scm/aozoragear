@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "section-slider": {
+      "type": "section-slider",
+      "blocks": {
+        "01c0046d-2d34-4ba5-aa72-69261ffc429f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/V_img01.jpg",
+            "title": "",
+            "link": "shopify:\/\/collections\/yurucamp"
+          }
+        },
+        "f88fabc6-58e4-46fd-8813-1a376485165b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/V_img02.jpg",
+            "title": "",
+            "link": "https:\/\/aozoragear.com\/collections\/yurucamp"
+          }
+        },
+        "bfb7cb11-6f3a-4f3d-90f7-5f1d17bde64b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/V_img03.jpg",
+            "title": "",
+            "link": "shopify:\/\/products\/cg00029"
+          }
+        },
+        "78ce4a96-fcb1-439c-b778-39bf8f435bfc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/V_img05.jpg",
+            "title": "",
+            "link": "https:\/\/shop-ilusa-sc.aozoragear.com\/collections\/all\/ip_%E5%8C%97%E6%96%97%E3%81%AE%E6%8B%B3"
+          }
+        },
+        "da06dcaa-e70b-4b1b-8eaf-613a65bf1a7f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/V_img04_e65a71d3-b1e9-45b1-895e-28170765cc56.jpg",
+            "title": "",
+            "link": "shopify:\/\/collections\/hatsunemiku"
+          }
+        }
+      },
+      "block_order": [
+        "01c0046d-2d34-4ba5-aa72-69261ffc429f",
+        "f88fabc6-58e4-46fd-8813-1a376485165b",
+        "bfb7cb11-6f3a-4f3d-90f7-5f1d17bde64b",
+        "78ce4a96-fcb1-439c-b778-39bf8f435bfc",
+        "da06dcaa-e70b-4b1b-8eaf-613a65bf1a7f"
+      ],
+      "settings": {}
+    },
+    "section-banner": {
+      "type": "section-banner",
+      "blocks": {
+        "525a84a7-7773-47a6-a7ec-fc2da6eba6c2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AOZORAGEAR_banner_a_d7c979c3-1c48-4fec-b303-bef000f7b36c.jpg",
+            "link": "shopify:\/\/pages\/yurucampingcar"
+          }
+        }
+      },
+      "block_order": [
+        "525a84a7-7773-47a6-a7ec-fc2da6eba6c2"
+      ],
+      "settings": {}
+    },
+    "section-all-products": {
+      "type": "section-all-products",
+      "settings": {}
+    },
+    "section-search": {
+      "type": "section-search",
+      "blocks": {
+        "2b4f02c9-94ec-44ab-a006-b8624c62b10a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/search_logo_21c1d283-7a66-4dcd-b4fa-9c2fff21f2d5.png",
+            "title": "©武論尊・原哲夫／コアミックス 1983,  版権許諾証GX-702",
+            "link": "\/collections\/all\/ip_北斗の拳"
+          }
+        },
+        "6e875330-7b5a-481c-b88e-c26cd7c00b58": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/search_logo_21c1d283-7a66-4dcd-b4fa-9c2fff21f2d5.png",
+            "title": "©あｆろ・芳文社／野外活動委員会",
+            "link": "\/collections\/all\/ip_ゆるキャン"
+          }
+        },
+        "f014e83c-0ef9-4d80-82a8-73681115aec5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/search_logo_21c1d283-7a66-4dcd-b4fa-9c2fff21f2d5.png",
+            "title": "Art by へちま © CFM",
+            "link": "https:\/\/shop-ilusa-sc.aozoragear.com\/collections\/all\/ip_%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF"
+          }
+        },
+        "fc8c1c87-3f74-42f4-8a2c-6a5eee6b8470": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/search_logo_21c1d283-7a66-4dcd-b4fa-9c2fff21f2d5.png",
+            "title": "©2022 San-X Co., Ltd. All Rights Reserved.",
+            "link": "\/collections\/all\/ip_%E3%81%99%E3%81%BF%E3%81%A3%E3%82%B3%E3%81%90%E3%82%89%E3%81%97"
+          }
+        },
+        "7e4eff22-9c04-4c44-892f-6804c0ba3599": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/search_logo_21c1d283-7a66-4dcd-b4fa-9c2fff21f2d5.png",
+            "title": "TM & © TOHO CO., LTD.",
+            "link": "\/collections\/all\/ip_ゴジラ"
+          }
+        }
+      },
+      "block_order": [
+        "2b4f02c9-94ec-44ab-a006-b8624c62b10a",
+        "6e875330-7b5a-481c-b88e-c26cd7c00b58",
+        "f014e83c-0ef9-4d80-82a8-73681115aec5",
+        "fc8c1c87-3f74-42f4-8a2c-6a5eee6b8470",
+        "7e4eff22-9c04-4c44-892f-6804c0ba3599"
+      ],
+      "settings": {}
+    },
+    "section-topics": {
+      "type": "section-topics",
+      "settings": {}
+    },
+    "section-blog-news": {
+      "type": "section-blog-news",
+      "settings": {}
+    }
+  },
+  "order": [
+    "section-slider",
+    "section-banner",
+    "section-all-products",
+    "section-search",
+    "section-topics",
+    "section-blog-news"
+  ]
+}

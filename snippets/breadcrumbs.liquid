@@ -1,0 +1,98 @@
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+<div class="breadcrumbs-wrap">
+  <nav class="breadcrumbs inner" role="navigation" aria-label="breadcrumbs">
+
+    <a href="/" title="Home">トップ</a>
+
+    {% if template contains 'page' %}
+
+      <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+      <span>{{ page.title }}</span>
+
+    {% elsif template contains 'product' %}
+
+      {% if collection.url %}
+
+        <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+        {{ collection.title | link_to: collection.url }}
+
+      {% endif %}
+
+      <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+      <span>{{ product.title }}</span>
+
+    {% elsif template contains 'collection' and collection.handle %}
+
+      <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+      {% if current_tags %}
+
+        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+
+        {{ collection.title | link_to: url }}
+
+        <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+          {% for t in current_tags %}
+          {% capture cat %}{{ cat }}{% capture temp_cat %}{% if t contains '_' %}{% assign cat_grp = t | split: '_' %}{{ cat_grp.first }}{% endif %}{% endcapture %}{% unless cat contains temp_cat %}{% if t contains '_' %}{% assign new_cat_grp = t | split: '_' %}{{ new_cat_grp.first }}{% endif %}{% unless forloop.last %}+{% endunless %}{% assign c = c | plus: 1 %}{% endunless %}{% endcapture %}
+          {% endfor %}
+
+          {% assign cat_array = cat | split: '+' %}
+          {% for i in cat_array %}
+              {% for t in current_tags %}
+                  {% if t contains i %}
+                      <span class="breadcrumb-tag">  
+                            {{ t | remove: i | remove: '_' }}
+                      </span> 
+                  {% endif %}
+              {% endfor %}
+          {% endfor %}
+
+      {% else %}
+
+        <span>{{ collection.title }}</span>
+
+      {% endif %}
+
+    {% elsif template == 'blog' %}
+
+      <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+      {% if current_tags %}
+
+        {{ blog.title | link_to: blog.url }}
+
+        <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+        <span>{{ current_tags | join: " + " }}</span>
+
+      {% else %}
+
+      <span>{{ blog.title }}</span>
+
+      {% endif %}
+
+    {% elsif template == 'article' %}
+
+      <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+      {{ blog.title | link_to: blog.url }}
+
+      <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+      <span>{{ article.title }}</span>
+
+    {% else %}
+
+    <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
+
+    <span>{{ page_title }}</span>
+
+    {% endif %}
+
+  </nav>
+</div>
+{% endunless %} 
+
