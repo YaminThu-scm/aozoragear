@@ -19,7 +19,7 @@
         <a href="{{ section.settings.message_link }}" class="announcement__link">
         {% endunless %}
             <div class="announcement js-announcement">
-                <p class="announcement__text">{{ section.settings.message_text | escape }}</p>
+                <p class="announcement__text">Branch{{ section.settings.message_text | escape }}</p>
             </div>
         {% unless section.settings.message_link == blank %}
         </a>
