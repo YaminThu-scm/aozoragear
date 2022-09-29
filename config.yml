@@ -1,4 +1,9 @@
 development:
   password: shptka_198486ac379656216646a00a594a81ee
-  theme_id: "130538668213"
+  theme_id: "130590605493"
+  store: ymt-local.myshopify.com
+
+production:
+  password: shptka_198486ac379656216646a00a594a81ee
+  theme_id: "130590572725"
   store: ymt-local.myshopify.com
