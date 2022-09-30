@@ -226,7 +226,9 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Morning": {
@@ -478,7 +480,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     },
     "Evening": {
       "color_headings": "#212121",
@@ -729,7 +733,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     },
     "Twilight": {
       "color_headings": "#212121",
@@ -980,7 +986,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     },
     "Weekend": {
       "color_headings": "#212121",
@@ -1232,7 +1240,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     }
   }
 }
