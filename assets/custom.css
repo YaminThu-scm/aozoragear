@@ -2386,3 +2386,7 @@ common
 #policy_optin {
   text-align: right;
 }
+
+body {
+  color: pink;
+}
