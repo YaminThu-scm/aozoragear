@@ -2390,3 +2390,7 @@ common
 body {
   color: pink;
 }
+
+html {
+  background: #fff;
+}
